@@ -13,3 +13,4 @@ Cable HC-SR04 and LCD screen to Arduino Uno
 Mount LCD screen case 
 Upload code to Arduino
 For best measure use a piece of thin cardboard.
+*Code coming soon ASP.
