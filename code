@@ -1,16 +1,16 @@
 #include <LiquidCrystal.h> 
 
-#define trigPin 9 //Sensörün Echo pini Arduinonun 13. pinine bağlanır
-#define echoPin 8 //Sensorün Trig pini Arduinonun 12. pinine bağlanır
+#define trigPin 11 
+#define echoPin 13 
 
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2); /* lcdnin baglandigi Arduino pinleri */
+LiquidCrystal lcd(10, 9, 5, 4, 3, 2); 
 
 void setup() {
   pinMode(trigPin, OUTPUT); 
   pinMode(echoPin, INPUT);
-  lcd.begin(16, 2); /* Kullandigimiz lcdnin sutun ve satir sayisini belirtmeliyiz */
+  lcd.begin(16, 2); 
   lcd.setCursor(0,0);
-  lcd.print("HAFIZ iHO"); /* Ekrana yazi yazalim */
+  lcd.print("HAFIZ iHO"); 
 }
 void loop() {
  long duration, distance;
@@ -20,15 +20,15 @@ digitalWrite(trigPin, HIGH);
 delayMicroseconds(10);
 digitalWrite(trigPin, LOW);
 duration = pulseIn(echoPin, HIGH);
-distance = 200 - (duration/2) / 29.1; //sesin gidiş gelişinde ölçülen süreyi önce ikiye bölerek sadece gidiş hızını ölçüyor sonra da ses hızına bölerek mesafeyi buluyoruz.
+distance = 200 - (duration/2) / 29.1; 
 
-lcd.setCursor(0,1); //Kursoru ikinci satır birinci sütuna getiriyoruz
-lcd.print(""); //Ekranı temizlemek için boşluk yazdırıyoruz.
-lcd.setCursor(0,1); //Kursoru tekrardan ikinci satır birinci sütuna getiriyoruz
+lcd.setCursor(0,1); 
+lcd.print(""); 
+lcd.setCursor(0,1); 
 lcd.print("Boyunuz");
-lcd.setCursor(8,1); //satırın başında mesafe yazdığı için kursoru 7. sütuna götörüyoruz
-lcd.print(distance); //Ölçülen mesafeyi yazdırıyoruz
-lcd.print("cm"); //Ölçü birimini yazdırıyoruz
-delay(250); //250 milisaniye bekletiyoruz.
+lcd.setCursor(8,1); 
+lcd.print(distance); 
+lcd.print("cm"); 
+delay(250); 
 
 }
