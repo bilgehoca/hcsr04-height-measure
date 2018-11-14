@@ -10,7 +10,7 @@ void setup() {
   pinMode(echoPin, INPUT);
   lcd.begin(16, 2); 
   lcd.setCursor(0,0);
-  lcd.print("HAFIZ iHO"); 
+  lcd.print("BILGE HOCA"); 
 }
 void loop() {
  long duration, distance;
@@ -25,7 +25,7 @@ distance = 200 - (duration/2) / 29.1;
 lcd.setCursor(0,1); 
 lcd.print(""); 
 lcd.setCursor(0,1); 
-lcd.print("Boyunuz");
+lcd.print("Your Height");
 lcd.setCursor(8,1); 
 lcd.print(distance); 
 lcd.print("cm"); 
